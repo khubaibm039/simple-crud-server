@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const { MongoClient, ServerApiVersion } = require("mongodb");
 
 const app = express();
 const port = process.env.PORT || 7000;
@@ -10,9 +11,8 @@ app.use(express.json());
 // khubaibm039
 // wAQ8HC6SZIpCT0R8
 
-const { MongoClient, ServerApiVersion } = require("mongodb");
 const uri =
-    "mongodb+srv://khubaibm039:<password>@cluster0.ag6bkre.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+    "mongodb+srv://khubaibm039:wAQ8HC6SZIpCT0R8@cluster0.ag6bkre.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -34,7 +34,7 @@ async function run() {
         );
     } finally {
         // Ensures that the client will close when you finish/error
-        await client.close();
+        // await client.close();
     }
 }
 run().catch(console.dir);
